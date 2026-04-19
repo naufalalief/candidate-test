@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -12,8 +12,8 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex">
+    <body class="font-sans text-gray-900 antialiased overflow-hidden">
+        <div class="fixed inset-0 flex">
             <div class="hidden lg:flex lg:w-1/2 bg-brand-800 relative overflow-hidden">
                 <div class="absolute inset-0 opacity-10">
                     <svg class="absolute -top-24 -left-24 w-96 h-96 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
@@ -55,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="flex-1 flex flex-col justify-center items-center px-6 py-12 bg-surface-50">
+            <div class="flex-1 flex flex-col justify-center items-center px-6 py-12 bg-surface-50 overflow-y-auto">
                 <div class="lg:hidden mb-8 flex items-center gap-2.5">
                     <div class="w-9 h-9 bg-brand-800 rounded-lg flex items-center justify-center">
                         <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>

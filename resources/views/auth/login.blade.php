@@ -1,4 +1,4 @@
-﻿<x-guest-layout>
+<x-guest-layout>
     <div class="mb-8">
         <h2 class="text-2xl font-bold text-gray-900">Welcome back</h2>
         <p class="mt-2 text-sm text-gray-500">Sign in to your account to continue managing your CLT layup data.</p>

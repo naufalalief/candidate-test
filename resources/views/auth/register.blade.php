@@ -1,4 +1,4 @@
-﻿<x-guest-layout>
+<x-guest-layout>
     <div class="mb-8">
         <h2 class="text-2xl font-bold text-gray-900">Create your account</h2>
         <p class="mt-2 text-sm text-gray-500">Get started with CLT Layup Manager to organize your suppliers and layup data.</p>

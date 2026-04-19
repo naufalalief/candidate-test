@@ -6,14 +6,39 @@ use App\Http\Controllers\LayupController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SupplierController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/dashboard', function (Request $request) {
+    $supplierCount = \App\Models\Supplier::count();
+    $layupCount = \App\Models\Layup::count();
+    $layerCount = \App\Models\Layer::count();
+
+    $recentSuppliers = \App\Models\Supplier::withCount('layups')
+        ->latest()
+        ->take(5)
+        ->get();
+
+    $recentLayups = \App\Models\Layup::with('supplier')
+        ->withCount('layers')
+        ->latest()
+        ->take(5)
+        ->get();
+
+    $notifications = $request->user()->notifications()->take(5)->get();
+
+    return view('dashboard', compact(
+        'supplierCount',
+        'layupCount',
+        'layerCount',
+        'recentSuppliers',
+        'recentLayups',
+        'notifications',
+    ));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
+use App\Models\User;
 use App\Notifications\DataChangedNotification;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
 /**
@@ -24,6 +24,7 @@ class NotificationService
      */
     public function notifyUser(string $action, string $type, string $name, ?string $url = null): void
     {
+        /** @var User|null $user */
         $user = Auth::user();
 
         if ($user) {

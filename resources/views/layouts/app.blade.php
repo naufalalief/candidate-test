@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="m-0 p-0 bg-white">
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,9 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased m-0 p-0 bg-white flex flex-col min-h-screen">@include('layouts.navigation')<div class="flex-1 bg-surface-50">
+    <body class="font-sans antialiased bg-white flex flex-col min-h-screen">
+        @include('layouts.navigation')
+        <div class="flex-1 bg-surface-50">
             <main class="py-4 sm:py-8">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     @isset($header)
